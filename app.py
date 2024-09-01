@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 
 # Set page configuration
 st.set_page_config(
-    page_title="Binary Classification App",
+    page_title="Classification App",
     page_icon="🚀",
     layout="wide",
 )
