@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 
 # Set page configuration
 st.set_page_config(
-    page_title="Classification App",
+    page_title="Attack Detection App",
     page_icon="🚀",
     layout="wide",
 )
@@ -45,7 +45,7 @@ feature_mapping = {
     'Inter Arrival Time (IAT)': 'IAT'
 }
 
-st.title("🚀 DDoS Detection App")
+st.title("🚀 Web Based Attack Detection")
 
 st.header("Enter Input Values")
 
@@ -58,18 +58,19 @@ with col1:
     user_input = {}
     for i, (full_name, short_name) in enumerate(feature_mapping.items()):
         if i < len(feature_mapping) // 2:  # First half of features
-            value = st.number_input(f"Enter value for {full_name}", value=0.0)
+            value = st.number_input(f"Enter value for {full_name}", value=0.0, format="%.5f")
             user_input[short_name] = value
 
 with col2:
     st.subheader("Features - Part 2")
     for i, (full_name, short_name) in enumerate(feature_mapping.items()):
         if i >= len(feature_mapping) // 2:  # Second half of features
-            value = st.number_input(f"Enter value for {full_name}", value=0.0)
+            value = st.number_input(f"Enter value for {full_name}", value=0.0, format="%.5f")
             user_input[short_name] = value
 
 if st.button("Predict"):
-    input_df = pd.DataFrame([user_input])
+    # Ensure the DataFrame columns match the feature names used during training
+    input_df = pd.DataFrame([user_input], columns=[feature_mapping[full_name] for full_name in feature_mapping])
     
     # Preprocessing
     X_scaled = scaler.transform(input_df)
@@ -87,3 +88,4 @@ if st.button("Predict"):
     st.subheader("Prediction Probability")
     proba_df = pd.DataFrame(prediction_proba, columns=["Benign Traffic", "Attack"])
     st.write(proba_df)
+
