@@ -135,11 +135,4 @@ if st.button("Predict"):
     result = "Attack" if prediction[0] == 1 else "Benign Traffic"
     st.write(f"The model predicts: **{result}**")
     
-    # Check if the model supports predict_proba
-    if hasattr(model, 'predict_proba') and callable(getattr(model, 'predict_proba')):
-        prediction_proba = model.predict_proba(X_pca)
-        st.subheader("Prediction Probability")
-        proba_df = pd.DataFrame(prediction_proba, columns=["Benign Traffic", "Attack"])
-        st.write(proba_df)
-    else:
-        st.info("Probability estimates are not available for this model.")
+
