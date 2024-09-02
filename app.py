@@ -52,21 +52,21 @@ feature_mapping = {
 }
 
 predefined_samples = {
-    "Benign": {
+    "Sample 1": {
         'flow_duration': 42.868034, 'Protocol Type': 2.0, 'Rate': 77.26135, 'Srate': 77.26135, 'Drate': 0.0,
         'fin_flag_number': 1.0, 'syn_flag_number': 0.0, 'rst_flag_number': 0.0, 'psh_flag_number': 0.0,
         'ack_flag_number': 1.0, 'ece_flag_number': 0.0, 'cwr_flag_number': 0.0, 'ack_count': 0.0,
         'syn_count': 0.4, 'fin_count': 0.0, 'urg_count': 202.6, 'HTTP': 0.0, 'HTTPS': 1.0, 'DNS': 0.0,
         'IAT': 0.00004817
     },
-    "Attack 1": {
+    "Sample 2": {
         'flow_duration': 2.768939, 'Protocol Type': 13.0, 'Rate': 0.230653, 'Srate': 0.230653, 'Drate': 0.0,
         'fin_flag_number': 0.0, 'syn_flag_number': 1.0, 'rst_flag_number': 0.0, 'psh_flag_number': 0.0,
         'ack_flag_number': 0.0, 'ece_flag_number': 0.0, 'cwr_flag_number': 0.0, 'ack_count': 0.0,
         'syn_count': 0.0, 'fin_count': 0.0, 'urg_count': 0.0, 'HTTP': 0.0, 'HTTPS': 0.0, 'DNS': 0.0,
         'IAT': 902972879.775784
     },
-    "Attack 2": {
+    "Sample 3": {
         'flow_duration': 1.2345, 'Protocol Type': 17.0, 'Rate': 0.47893, 'Srate': 0.47893, 'Drate': 0.0,
         'fin_flag_number': 0.0, 'syn_flag_number': 1.0, 'rst_flag_number': 0.0, 'psh_flag_number': 0.0,
         'ack_flag_number': 0.0, 'ece_flag_number': 0.0, 'cwr_flag_number': 0.0, 'ack_count': 0.0,
